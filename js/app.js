@@ -70,9 +70,9 @@ const mphToKmph = (speed) => {
 // }
 
 const description = [
-    "Quang mây", "Ít mây", "Có mây",
-    "Nhiều mây", "Mây và mưa", "Mưa",
-    "Sấm chớp", "Tuyết rơi", "Độ ẩm cao"
+    "Quang mây", "Ít mây", "Mây rải rác",
+    "Âm u", "Mưa rào", "Mưa",
+    "Sấm chớp", "Tuyết rơi", "Sương mù"
 ];
 
 const dataDescription = [
@@ -97,17 +97,22 @@ $(document).ready(() => {
             console.log(data.weather[0].description);
 
             let windDeg = data.wind.deg;
-            let windDirection;
-            if (windDeg < 22.5 || windDeg >= 337.5) windDirection = "Bắc";
-            if (windDeg < 67.5 && windDeg >= 22.5) windDirection = "Đông Bắc";
-            if (windDeg < 112.5 && windDeg >= 67.5) windDirection = "Đông";
-            if (windDeg < 157.5 && windDeg >= 112.5) windDirection = "Đông Nam";
-            if (windDeg < 202.5 && windDeg >= 157.5) windDirection = "Nam";
-            if (windDeg < 247.5 && windDeg >= 202.5) windDirection = "Tây Nam";
-            if (windDeg < 292.5 && windDeg >= 247.5) windDirection = "Tây";
-            if (windDeg < 337.5 && windDeg >= 292.5) windDirection = "Tây Bắc";
-            
-            $("#wind-direct").replaceWith(windDirection);
+            if (windDeg) {
+                let windDirection;
+                if (windDeg < 22.5 || windDeg >= 337.5) windDirection = "Bắc";
+                if (windDeg < 67.5 && windDeg >= 22.5) windDirection = "Đông Bắc";
+                if (windDeg < 112.5 && windDeg >= 67.5) windDirection = "Đông";
+                if (windDeg < 157.5 && windDeg >= 112.5) windDirection = "Đông Nam";
+                if (windDeg < 202.5 && windDeg >= 157.5) windDirection = "Nam";
+                if (windDeg < 247.5 && windDeg >= 202.5) windDirection = "Tây Nam";
+                if (windDeg < 292.5 && windDeg >= 247.5) windDirection = "Tây";
+                if (windDeg < 337.5 && windDeg >= 292.5) windDirection = "Tây Bắc";
+                
+                $("#wind-direct").replaceWith(windDirection);
+            }
+            else {
+                $("#wind-direct").replaceWith("Không rõ");
+            }
         }
     });
     $.ajax({

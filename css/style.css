@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    width: 570px;
+    height: 376px;
+    background: 
+        linear-gradient(rgba(15, 15, 15, 0.4) 0%,
+         rgba(15, 15, 15, 0.4) 35%,
+         rgba(15, 15, 15, 0.4) 100%),
+        url(../img/hoguom.jpg),
+        100%, 100%;
+    background-repeat: none;
+}
+
+.all-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+    color: white;
+    letter-spacing: 3px;
+    margin-top: 35px;
+    font-weight: 700;
+    font-size: 45px;
+}
+
+.descr {
+    color: white;
+    position: absolute;
+    transform: translateY(88px);
+}
+
+.content {
+    display: flex;
+    position: relative;
+    transform: translateY(5px);
+}
+
+.main {
+    display: flex;
+    margin: 20px;
+    transform: translateY(-20px);
+}
+
+.main img {
+    position: relative;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+}
+
+.templ {
+    padding-left: 10px;
+    color: white;
+    font-size: 50px;
+}
+
+.feeling {
+    color: white;
+}
+
+.row {    
+    justify-content: space-around;
+}
+
+.col {
+    line-height: 1.8;
+}
